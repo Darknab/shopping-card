@@ -1,7 +1,7 @@
 import {PropTypes} from "prop-types";
 import Card from "./Card";
 
-export default function Category({ id, products }) {
+export default function Category({ id, products, addToCart }) {
   return (
     <section className="category" id={id}>
       {products.map((item) => {
@@ -10,6 +10,8 @@ export default function Category({ id, products }) {
           title={item.title}
           price={item.price}
           image={item.image}
+          addToCart={addToCart}
+          id={item.id}
         />
       })}
     </section>
@@ -19,4 +21,5 @@ export default function Category({ id, products }) {
 Category.propTypes = {
   id: PropTypes.string.isRequired,
   products: PropTypes.array.isRequired,
+  addToCart: PropTypes.func.isRequired,
 }

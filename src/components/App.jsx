@@ -4,6 +4,7 @@ import Category from "./Category";
 import { useEffect, useState } from "react";
 
 export default function App() {
+  const [cart, setCart] = useState([]);
   const [data, setData]  = useState(null);
   const [isLoading, setIsLoading]= useState(true);
   const [error, setError]  = useState(null);
@@ -21,6 +22,18 @@ export default function App() {
       .finally(() => setIsLoading(false));
   }, []);
 
+  function addToCart(e, id) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    setCart([
+      ...cart,
+      {
+        id: id,
+        quantity: formData.get('quantity'),
+      }
+    ]);
+  }
+
   return (
     <>
       <Navigation />
@@ -30,10 +43,10 @@ export default function App() {
         : error 
         ? <p>A network error was encoutred</p>
         : <>
-            <Category id="men" products={data.filter(product => product.category === "men's clothing")}/>
-            <Category id="women" products={data.filter(product => product.category === "women's clothing")}/>
-            <Category id="jewelery" products={data.filter(product => product.category === "jewelery")}/>
-            <Category id="electronics" products={data.filter(product => product.category === "electronics")}/>
+            <Category id="men" addToCart={addToCart} products={data.filter(product => product.category === "men's clothing")}/>
+            <Category id="women" addToCart={addToCart} products={data.filter(product => product.category === "women's clothing")}/>
+            <Category id="jewelery" addToCart={addToCart} products={data.filter(product => product.category === "jewelery")}/>
+            <Category id="electronics" addToCart={addToCart} products={data.filter(product => product.category === "electronics")}/>
           </>
       }
     </>
