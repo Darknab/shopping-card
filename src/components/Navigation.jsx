@@ -4,7 +4,7 @@ export default function Navigation() {
   return (
     <header>
       <nav>
-        <ul>
+        <ul className="nav-menu">
           <li><Link to="/">Awesome shop</Link></li>
           <li><Link to="#">Men</Link></li>
           <li><Link to="#">Women</Link></li>
