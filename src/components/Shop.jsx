@@ -21,16 +21,21 @@ export default function Shop() {
       .finally(() => setIsLoading(false));
   }, []);
 
-  function addToCart(e, id) {
+  function addToCart(e, image, title, price) {
     e.preventDefault();
     const formData = new FormData(e.target);
-    setCart([
-      ...cart,
-      {
-        id: id,
-        quantity: formData.get('quantity'),
-      }
-    ]);
+    if (formData.get('quantity') > 0) {
+      setCart([
+        ...cart,
+        {
+          image: image,
+          title: title,
+          price: price,
+          quantity: formData.get('quantity'),
+        }
+      ]);
+    }
+
   }
 
   if (isLoading) return <p>Loading...</p>
