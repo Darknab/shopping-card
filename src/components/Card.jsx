@@ -1,12 +1,12 @@
 import { PropTypes } from "prop-types";
 
-export default function Card({ id, title, price, image, addToCart }) {
+export default function Card({title, price, image, addToCart }) {
   return (
     <div className="card">
       <h3>{title}</h3>
       <img src={image} alt={title} />
       <p>{price}</p>
-      <form onSubmit={(e) => addToCart(e, id)}>
+      <form onSubmit={(e) => addToCart(e, image, title, price)}>
         <label>
           <input type="number" name="quantity" defaultValue={1} />
         </label>
