@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
-export default function Navigation() {
+export default function Navigation({ count }) {
   return (
     <header>
       <nav>
@@ -10,9 +11,13 @@ export default function Navigation() {
           <li><Link to="#">Women</Link></li>
           <li><Link to="#">Jewelery</Link></li>
           <li><Link to="#">Electronics</Link></li>
-          <li><Link to="#">Cart</Link></li>
+          <li><Link to="#">Cart <span>{count}</span></Link></li>
         </ul>
       </nav>
     </header>
   );
+}
+
+Navigation.propTypes = {
+  count: PropTypes.number.isRequired,
 }
