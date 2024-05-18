@@ -11,7 +11,7 @@ export default function Navigation({ count }) {
           <li><Link to="#">Women</Link></li>
           <li><Link to="#">Jewelery</Link></li>
           <li><Link to="#">Electronics</Link></li>
-          <li><Link to="#">Cart <span>{count}</span></Link></li>
+          <li><Link to="/cart">Cart <span>{count}</span></Link></li>
         </ul>
       </nav>
     </header>
