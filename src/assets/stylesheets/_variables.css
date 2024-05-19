@@ -1,0 +1,37 @@
+:root {
+  /* Font sizes */
+  --font-size-100: 0.75rem;  
+  --font-size-200: 0.875rem;  
+  --font-size-400: 1rem;      
+  --font-size-500: 1.125rem;
+  --font-size-600: 1.25rem;
+  --font-size-700: 1.5rem;
+  --font-size-800: 2rem; 
+  --font-size-900: 2.5rem;
+
+  /* Spacing */
+  --space-100: 0.25rem;
+  --space-200: 0.375rem;
+  --space-300: 0.5rem;
+  --space-400: 0.75rem;
+  --space-500: 1rem;
+  --space-600: 1.5rem;
+  --space-700: 2rem;
+  --space-750:2.5rem;
+  --space-800: 3rem;
+  --space-900: 4rem;
+
+  /* Breakpoints */
+  --width-sm: 576px;
+  --width-md: 768px;
+  --width-lg: 992px;
+  --width-xl: 1200px;
+  --width-xxl: 1400px;
+
+  /* Colors */
+  --light-grey: #EDEDED;
+  --dark-grey: #1a1a1a;
+  --orange: #FE9000;
+  --blue: #1c7293;
+  --orange-red: #BC2C1A;
+}
