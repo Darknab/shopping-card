@@ -31,6 +31,7 @@ li {
 .container {
   max-width: var(--width-xl);
   padding: var(--space-700);
+  margin: 0 auto;
 }
 
 button {
