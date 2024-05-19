@@ -3,3 +3,24 @@
   background-size: cover;
   min-height: 100vh;
 }
+
+.hero-content {
+  margin-top: 30vh;
+  margin-left: var(--space-900);
+}
+
+.site-title {
+  font-size: var(--font-size-900);
+  margin-bottom: var(--space-700);
+}
+
+.shop {
+  color: var(--orange);
+  background-color: var(--dark-grey);
+  font-weight: 700;
+
+  &:hover {
+    background-color: var(--orange);
+    color: var(--dark-grey);
+  }
+}
