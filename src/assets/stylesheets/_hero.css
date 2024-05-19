@@ -1,12 +1,13 @@
 #hero {
-  background-image: url("../images/md-salman-iiqg2xbmvk0-unsplash.jpg");
+  background-image: url("../images/md-salman-iiqg2xbmvk0-unsplash-1.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
 }
 
 .hero-content {
   margin-top: 30vh;
-  margin-left: var(--space-900);
+  margin-left: var(--space-700);
 }
 
 .site-title {
