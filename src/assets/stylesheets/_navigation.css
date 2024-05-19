@@ -50,5 +50,14 @@ nav {
     left: 0;
     width: 100%;
   }
+}
 
+.count {
+  padding: var(--space-200);
+  border-radius: var(--space-200);
+}
+
+#full {
+  background-color: var(--orange-red);
+  color: var(--light-grey);
 }

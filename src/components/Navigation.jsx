@@ -12,7 +12,7 @@ export default function Navigation({ count }) {
           <li className="nav-link"><HashLink to="/shop#women">Women</HashLink></li>
           <li className="nav-link"><HashLink to="/shop#jewelery">Jewelery</HashLink></li>
           <li className="nav-link"><HashLink to="/shop#electronics">Electronics</HashLink></li>
-          <li className="nav-link" id="cart-link"><Link to="/cart">Cart <span>{count}</span></Link></li>
+          <li className="nav-link" id="cart-link"><Link to="/cart">Cart <sub className="count" id={count === 0 ? "empty" : "full"}>{count}</sub></Link></li>
         </ul>
       </nav>
     </header>
