@@ -11,6 +11,7 @@
 
 body {
   font-family: system-ui, sans-serif;
+  color: var(--dark-grey);
 }
 
 img {
@@ -25,4 +26,23 @@ a {
 
 li {
   list-style: none;
+}
+
+.container {
+  max-width: var(--width-xl);
+  padding: var(--space-700);
+}
+
+button {
+  padding-block: var(--space-500);
+  padding-inline: var(--space-700);
+  font: inherit;
+  border-radius: var(--space-500);
+  border: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  
+  &:hover {
+    scale: 1.1;
+  }
 }
