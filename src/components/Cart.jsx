@@ -25,7 +25,7 @@ export default function Cart() {
     }
   }
 
-  const total = () => {
+  function calculateSubTotal() {
     let result = 0;
     cart.map(item => {
       result += item.quantity * item.price;
@@ -33,6 +33,14 @@ export default function Cart() {
 
     return result;
   }
+
+  function calculateTotal() {
+    const subTotal = calculateSubTotal();
+    return subTotal > 0 ? subTotal + 25 : 0;
+  }
+
+  const subTotal = calculateSubTotal();
+  const total = calculateTotal();
 
   return (
     <>
@@ -79,9 +87,9 @@ export default function Cart() {
       </div>
       <div className="cart-summary">
         <h3>Order Summary</h3>
-        <p>Sub Total: <span>{total()}</span></p>
-        <p>Shipping charge: <span>{25.00}</span></p>
-        <p>Total: <span>{(total() + 25).toFixed(2)}</span></p>
+        <p>Sub Total: <span>{subTotal}</span></p>
+        <p>Shipping charge: <span>{subTotal > 0 ? 25 : 0}</span></p>
+        <p>Total: <span>{total}</span></p>
       </div>
     </>
   );

@@ -44,10 +44,11 @@ export default function Shop() {
 
   return (
   <>
-    <Category id="men" addToCart={addToCart} products={data.filter(product => product.category === "men's clothing")}/>
-    <Category id="women" addToCart={addToCart} products={data.filter(product => product.category === "women's clothing")}/>
-    <Category id="jewelery" addToCart={addToCart} products={data.filter(product => product.category === "jewelery")}/>
-    <Category id="electronics" addToCart={addToCart} products={data.filter(product => product.category === "electronics")}/>
+    <h1>Shop</h1>
+    <Category id="men" addToCart={addToCart} products={data.filter(product => product.category === "men's clothing")} category="men's clothing"/>
+    <Category id="women" addToCart={addToCart} products={data.filter(product => product.category === "women's clothing")} category="women's clothing"/>
+    <Category id="jewelery" addToCart={addToCart} products={data.filter(product => product.category === "jewelery")} category="jewelery"/>
+    <Category id="electronics" addToCart={addToCart} products={data.filter(product => product.category === "electronics")} category="electronics"/>
   </>
   );
 
