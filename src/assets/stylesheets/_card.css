@@ -1,4 +1,86 @@
 .card {
   max-width: 300px;
-  padding: 1rem;
+  padding: var(--space-700);
+  background-color: white;
+  border-radius: var(--space-500);
+  box-shadow: 10px 10px 40px var(--dark-grey);
+  transition: all 300ms ease-in-out;
+
+  & h3 {
+    height: var(--space-990);
+    font-size: var(--font-size-300);
+    margin-bottom: var(--space-500);
+    text-align: center;
+  }
+
+  & .image-container {
+    height: 300px;
+  }
+
+  & img {
+    margin: 0 auto;
+    transition: scale 300ms ease-in-out;
+
+  }
+}
+
+.card:hover {
+  box-shadow: 5px 5px 40px var(--dark-grey-muted);
+  
+   & img {
+    scale: 1.1;
+   }
+}
+
+.price {
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--font-size-700);
+
+  & span {
+    color: var(--orange);
+  }
+}
+
+.quantity {
+  appearance: textfield;
+  max-width: var(--space-900);
+  padding: var(--space-300);
+  font: inherit;
+  margin-right: var(--space-500);
+  border: 1px solid var(--dark-grey-muted);
+  border-radius: var(--space-300);
+}
+
+.quantity::-webkit-outer-spin-button,
+.quantity::-webkit-inner-spin-button {
+  appearance: none; 
+}
+
+.add-to-cart {
+  background-color: var(--blue);
+}
+
+.quantity-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.control {
+  position: absolute;
+  right: 20px;
+  padding: 0;
+  background-color: var(--orange);
+  height: var(--space-500);
+  width: var(--space-500);
+  border-radius: 50%;
+  line-height: 1rem;
+}
+
+.increment {
+  top: 2px;
+}
+
+.decrement {
+  top: 22px;
 }

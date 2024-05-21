@@ -3,3 +3,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
 }
+
+.cat-title {
+  text-transform: capitalize;
+  margin-block: var(--space-900);
+}

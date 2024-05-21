@@ -1,7 +1,7 @@
 header {
   padding: var(--space-500);
   width: 100%;
-  background-color: var(--light-gey);
+  background-color: var(--light-grey);
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
