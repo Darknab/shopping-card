@@ -4,7 +4,7 @@ import Card from "./Card";
 export default function Category({ id, products, addToCart, category }) {
   return (
     <section id={id}>
-      <h2>{category}</h2>
+      <h2 className="cat-title">{category}</h2>
       <div className="category">
       {products.map((item) => {
         return <Card 
