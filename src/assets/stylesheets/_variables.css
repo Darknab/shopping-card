@@ -20,6 +20,7 @@
   --space-750:2.5rem;
   --space-800: 3rem;
   --space-900: 4rem;
+  --space-990: 5rem;
 
   /* Breakpoints */
   --width-sm: 576px;
@@ -29,9 +30,10 @@
   --width-xxl: 1400px;
 
   /* Colors */
-  --light-grey: #EDEDED;
-  --dark-grey: #1a1a1a;
-  --orange: #FE9000;
-  --blue: #1c7293;
-  --orange-red: #BC2C1A;
+  --light-grey: rgb(237, 237, 237);
+  --dark-grey: rgb(26, 26, 26);
+  --orange: rgb(254, 144, 0);
+  --blue: rgb(28, 114, 147);
+  --orange-red: rgb(188, 45, 26);
+  --dark-grey-muted: rgba(26, 26, 26, 0.5);
 }
