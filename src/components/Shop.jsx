@@ -38,17 +38,28 @@ export default function Shop() {
 
   }
 
-  if (isLoading) return <p>Loading...</p>
+  //if (isLoading) return <p>Loading...</p>
 
-  if (error) return <p>A network error was encoutred</p>
+  //if (error) return <p>A network error was encoutred</p>
 
   return (
   <>
-    <h1>Shop</h1>
-    <Category id="men" addToCart={addToCart} products={data.filter(product => product.category === "men's clothing")} category="men's clothing"/>
-    <Category id="women" addToCart={addToCart} products={data.filter(product => product.category === "women's clothing")} category="women's clothing"/>
-    <Category id="jewelery" addToCart={addToCart} products={data.filter(product => product.category === "jewelery")} category="jewelery"/>
-    <Category id="electronics" addToCart={addToCart} products={data.filter(product => product.category === "electronics")} category="electronics"/>
+    <div className="container">
+    <h1 className="shop-title">Shop</h1>
+      { isLoading 
+        ? <p>Loading...</p>
+        : error
+        ? <p>A network error was encoutred</p>
+        : <>
+            <Category id="men" addToCart={addToCart} products={data.filter(product => product.category === "men's clothing")} category="men's clothing"/>
+            <Category id="women" addToCart={addToCart} products={data.filter(product => product.category === "women's clothing")} category="women's clothing"/>
+            <Category id="jewelery" addToCart={addToCart} products={data.filter(product => product.category === "jewelery")} category="jewelery"/>
+            <Category id="electronics" addToCart={addToCart} products={data.filter(product => product.category === "electronics")} category="electronics"/>
+          </>
+      }
+    </div>
+    
+
   </>
   );
 
