@@ -1,0 +1,130 @@
+.cart-title {
+  margin-block: var(--space-900);
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-800);
+}
+
+.empty-cart {
+  text-align: center;
+}
+
+.item, .cart-summary {
+  background-color: white;
+  padding: var(--space-500);
+  margin-block: var(--space-700);
+  border-radius: var(--space-500);
+}
+
+.description {
+  display: inline-flex;
+  padding-bottom: var(--space-700);
+  border-bottom: 1px solid var(--dark-grey-muted);
+  width: 90%;
+}
+
+.thumbnail {
+  display: inline-block;
+  border-radius: var(--space-300);
+}
+
+.item-title {
+  display: inline-block;
+  margin-left: var(--space-500);
+  max-width: 50%;
+  margin-bottom: auto;
+  font-weight: 700;
+}
+
+.delete-btn {
+  padding: 0;
+  height: var(--space-700);
+  background-color: white;
+  color: var(--dark-grey-muted);
+  margin-left: auto;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-block: var(--space-500);
+
+  &  h5 {
+    font-weight: 500;
+    color: var(--blue);
+    margin-bottom: var(--space-300);
+    text-align: center;
+  }
+}
+
+.cart-price {
+  font-weight: 700;
+  font-size: var(--font-size-700);
+}
+
+.dollar {
+  color: var(--orange);
+  margin-left: auto;
+}
+
+.item-quantity {
+  max-width: var(--space-900);
+  padding: var(--space-300);
+  font: inherit;
+  border: 1px solid var(--dark-grey-muted);
+  border-radius: var(--space-300);
+}
+
+.icon {
+  transform: translatey(6px);
+}
+
+.checkout {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.shop-link {
+  color: var(--dark-grey);
+  transition: color 200ms ease-in-out;
+  padding-top: var(--space-400);
+
+  &:hover {
+    color: var(--orange)
+  }
+}
+.checkout-btn {
+  background-color: var(--dark-grey);
+  color: var(--orange);
+  padding-bottom: var(--space-600);
+
+  &:hover {
+    scale: 1;
+    background-color: var(--orange);
+    color: var(--dark-grey);
+  }
+}
+
+.cart-summary {
+  height: fit-content;
+}
+
+.cart-summary hr {
+  border-top: 1px solid var(--dark-grey-muted);
+  margin-block: var(--space-500);
+}
+
+.cart-summary p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-total {
+  font-weight: bold;
+}
