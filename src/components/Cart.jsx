@@ -41,8 +41,8 @@ export default function Cart() {
     return subTotal > 0 ? subTotal + 25 : 0;
   }
 
-  const subTotal = calculateSubTotal();
-  const total = calculateTotal();
+  const subTotal = calculateSubTotal().toFixed(2);
+  const total = calculateTotal().toFixed(2);
 
   return (
     <div className="container">
@@ -95,7 +95,7 @@ export default function Cart() {
           <hr />
           <p>Sub Total: <span className="dollar">$</span><span>{subTotal}</span></p>
           <hr />
-          <p>Shipping charge: <span className="dollar">$</span><span>{subTotal > 0 ? 25 : 0}</span></p>
+          <p>Shipping charge: <span className="dollar">$</span><span>{subTotal > 0 ? 25.00 : 0}</span></p>
           <hr />
           <p className="summary-total">Total: <span className="dollar">$</span><span>{total}</span></p>
           <hr />
