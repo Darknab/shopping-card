@@ -1,4 +1,6 @@
 import { Link, useOutletContext } from "react-router-dom";
+import Icon from '@mdi/react';
+import { mdiTrashCanOutline, mdiArrowLeftThin, mdiCartOutline } from '@mdi/js';
 
 
 export default function Cart() {
@@ -43,54 +45,62 @@ export default function Cart() {
   const total = calculateTotal();
 
   return (
-    <>
-      <h1>Your Cart</h1>
-      <div className="cart-items">
-        { cart.length === 0
-          ? <p>Your cart is empty</p>
-          : <>
-              {cart.map(item => {
-                return (
-                <div className="item" key={item.title}>
-                  <div>
-                    <img src={item.image} width={40} />
-                    <span>{item.title}</span>
-                    <button onClick={() => handleDelete(item.title)}>Delete</button>
+    <div className="container">
+      <h1 className="cart-title">Your Cart</h1>
+      <div className="grid-container">
+        <div className="cart-items">
+          { cart.length === 0
+            ? <p className="empty-cart">Your cart is empty</p>
+            : <>
+                {cart.map(item => {
+                  return (
+                  <div className="item" key={item.title}>
+                    <div className="description">
+                      <img className="thumbnail" src={item.image} width={100} />
+                      <span className="item-title">{item.title}</span>
+                      <button className="delete-btn" onClick={() => handleDelete(item.title)}>
+                        <Icon path={mdiTrashCanOutline} size={0.8} />
+                      </button>
+                    </div>
+                    <div className="checkout-item">
+                      <div>
+                        <h5>Price</h5>
+                        <p className="cart-price"><span className="dollar">$</span>{item.price}</p>
+                      </div>
+                      <div>
+                        <h5>Quantity</h5>
+                        <form>
+                          <input type="number" className="item-quantity" name="quantity" defaultValue={item.quantity} min={0} onChange={(e) => handleChange(e, item.title)}/>
+                        </form>
+                      </div>
+                      <div>
+                        <h5>Total</h5>
+                        <p className="cart-price"><span className="dollar">$</span>{item.quantity * item.price}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="item-price">
-                      <h5>Price</h5>
-                      <p>{item.price}</p>
-                    </div>
-                    <div className="item-quantity">
-                      <h5>Quantity</h5>
-                      <form>
-                        <input type="number" name="quantity" defaultValue={item.quantity} onChange={(e) => handleChange(e, item.title)}/>
-                      </form>
-                    </div>
-                    <div className="item-total">
-                      <h5>Total</h5>
-                      <p>{item.quantity * item.price}</p>
-                    </div>
-                  </div>
+                  )
+                })}
+                <div className="checkout">
+                  <Link className="shop-link" to="/shop"><Icon className="icon" path={mdiArrowLeftThin} size={1} /> Continue shopping</Link>
+                  <Link className="checkout-link" to="#">
+                    <button className="checkout-btn"><Icon className="icon" path={mdiCartOutline} size={1} /> Checkout</button>
+                  </Link>
                 </div>
-                )
-              })}
-              <div>
-                <Link to="/shop">Continue shopping</Link>
-                <Link to="#">
-                  <button>Checkout</button>
-                </Link>
-              </div>
-            </>
-        }
-      </div>
-      <div className="cart-summary">
-        <h3>Order Summary</h3>
-        <p>Sub Total: <span>{subTotal}</span></p>
-        <p>Shipping charge: <span>{subTotal > 0 ? 25 : 0}</span></p>
-        <p>Total: <span>{total}</span></p>
-      </div>
-    </>
+              </>
+          }
+        </div>
+        <div className="cart-summary">
+          <h3>Order Summary: </h3>
+          <hr />
+          <p>Sub Total: <span className="dollar">$</span><span>{subTotal}</span></p>
+          <hr />
+          <p>Shipping charge: <span className="dollar">$</span><span>{subTotal > 0 ? 25 : 0}</span></p>
+          <hr />
+          <p className="summary-total">Total: <span className="dollar">$</span><span>{total}</span></p>
+          <hr />
+        </div>
+      </div> 
+    </div>
   );
 }
