@@ -113,6 +113,8 @@
 
 .cart-summary {
   height: fit-content;
+  position: sticky;
+  top: var(--space-990);
 }
 
 .cart-summary hr {
