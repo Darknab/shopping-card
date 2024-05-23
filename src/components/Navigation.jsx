@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link"
 import { PropTypes } from "prop-types";
+import Icon from '@mdi/react';
+import { mdiCartOutline } from '@mdi/js';
 
 export default function Navigation({ count }) {
   return (
@@ -12,7 +14,7 @@ export default function Navigation({ count }) {
           <li className="nav-link"><HashLink to="/shop#women">Women</HashLink></li>
           <li className="nav-link"><HashLink to="/shop#jewelery">Jewelery</HashLink></li>
           <li className="nav-link"><HashLink to="/shop#electronics">Electronics</HashLink></li>
-          <li className="nav-link" id="cart-link"><Link to="/cart">Cart <sub className="count" id={count === 0 ? "empty" : "full"}>{count}</sub></Link></li>
+          <li id="cart-link"><Link to="/cart"><Icon className="icon" path={mdiCartOutline} size={1} /> <sub className="count" id={count === 0 ? "empty" : "full"}>{count}</sub></Link></li>
         </ul>
       </nav>
     </header>
