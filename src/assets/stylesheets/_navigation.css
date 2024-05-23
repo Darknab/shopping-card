@@ -5,6 +5,7 @@ header {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 20;
 }
 
 .nav-menu {
@@ -28,6 +29,14 @@ nav {
 
 #cart-link {
   margin-left: auto;
+
+  transition: all 200ms ease-in-out;
+ 
+  padding: var(--space-300);
+}
+
+#cart-link:hover {
+  scale: 1.1;
 }
 
 .nav-link {
@@ -55,6 +64,7 @@ nav {
 .count {
   padding: var(--space-200);
   border-radius: var(--space-200);
+  font-size: var(--font-size-100);
 }
 
 #full {
