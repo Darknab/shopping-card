@@ -35,12 +35,7 @@ export default function Shop() {
         }
       ]);
     }
-
   }
-
-  //if (isLoading) return <p>Loading...</p>
-
-  //if (error) return <p>A network error was encoutred</p>
 
   return (
   <>
@@ -58,9 +53,6 @@ export default function Shop() {
           </>
       }
     </div>
-    
-
   </>
   );
-
 }
