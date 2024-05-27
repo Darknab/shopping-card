@@ -6,16 +6,18 @@ export default function Card({title, price, image, addToCart }) {
 
   function handleIncrement(e) {
     e.preventDefault();
-    setQuantity(quantity + 1);
+    if (quantity < 3) setQuantity(prevquantity => prevquantity + 1);
   }
 
   function handleDecrement(e) {
     e.preventDefault();
-    setQuantity(quantity - 1);
+    if (quantity > 1) setQuantity(prevquantity => prevquantity - 1);
   }
 
   function handleChange(e) {
-    setQuantity(e.target.value);
+    e.preventDefault();
+    const input = Math.max(1, Number(e.target.value));
+    setQuantity(input);
   }
 
   return (
@@ -28,9 +30,9 @@ export default function Card({title, price, image, addToCart }) {
       <form onSubmit={(e) => addToCart(e, image, title, price, quantity)}>
         <div className="quantity-wrapper">
           <label>
-            <input className="quantity" type="number" name="quantity" min={1} value={quantity} onChange={(e) => handleChange(e)} />
-            <button className="control increment" onClick={handleIncrement}>+</button>
-            <button className="control decrement" onClick={handleDecrement}>-</button>
+            <input className="quantity" type="number" name="quantity" min={1} max={3} value={quantity} onChange={(e) => handleChange(e)} />
+            <button type="button" className="control increment" onClick={handleIncrement}>+</button>
+            <button type="button" className="control decrement" onClick={handleDecrement}>-</button>
           </label>
         </div>
 
