@@ -41,4 +41,24 @@ describe("Navigation", () => {
     const cartLink = document.querySelector('#cart-link'); 
     expect(cartLink.firstChild.getAttribute('href')).toBe('/cart');
   });
+
+  it("count have the empty id if the cart is empty", () => {
+    render(
+      <BrowserRouter>
+        <Navigation count={0}/>
+      </BrowserRouter>
+    );
+    const count = document.querySelector('.count') 
+    expect(count.id).toBe('empty');
+  });
+
+  it("count have the full id if the cart is empty", () => {
+    render(
+      <BrowserRouter>
+        <Navigation count={1}/>
+      </BrowserRouter>
+    );
+    const count = document.querySelector('.count') 
+    expect(count.id).toBe('full');
+  });
 })
