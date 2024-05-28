@@ -1,0 +1,17 @@
+footer {
+  padding: var(--space-500);
+  background-color: var(--light-grey);
+}
+
+footer p {
+  text-align: center;
+}
+
+footer  a {
+  color: var(--blue);
+}
+
+footer span {
+  margin-left: var(--space-500);
+}
+
