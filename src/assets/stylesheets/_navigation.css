@@ -3,17 +3,34 @@ header {
   width: 100%;
   background-color: var(--light-grey);
   position: fixed;
-  left: 50%;
+  inset-inline: 50%;
   transform: translateX(-50%);
+  overflow: hidden;
   z-index: 20;
+  transition: all 500ms ease-in-out;
+
+  @media (max-width: 576px) {
+    max-width: 0;
+    inset-inline: -100%; 
+    padding: 0;
+  }
 }
 
 .nav-menu {
   display: flex;
   gap: var(--space-700);
 
-  & a {
+  a {
     color: var(--dark-grey);
+  }
+
+  li {
+    max-width: max-content;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    text-align: start;
   }
 }
 
@@ -21,6 +38,11 @@ nav {
   text-align: center;
   max-width: var(--width-xl);
   margin: 0 auto;
+
+  @media (max-width: 576px) {
+    max-width: 200px;
+    margin: 0;
+  }
 }
 
 #home-link {
@@ -70,4 +92,13 @@ nav {
 #full {
   background-color: var(--orange-red);
   color: var(--light-grey);
+}
+
+.active {
+  @media (max-width: 576px) {
+    max-width: 200px;
+    padding: var(--space-500);
+    inset-inline-start: 0;
+    transform: translateX(0);
+  }
 }
