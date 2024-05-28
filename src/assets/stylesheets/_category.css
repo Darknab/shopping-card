@@ -1,7 +1,15 @@
 .category {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  gap: var(--space-700);
+  grid-template-columns: 1fr;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .cat-title {
