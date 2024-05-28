@@ -5,9 +5,13 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-800);
-}
+
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr;
+  }
+ }
 
 .empty-cart {
   text-align: center;
