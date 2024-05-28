@@ -1,0 +1,34 @@
+.hamburger {
+  display: none;
+  overflow: hidden;
+
+  @media (max-width: 576px) {
+    display: block;
+    position: fixed;
+    right: var(--space-700);
+    top: var(--space-700);
+  }
+}
+
+.line {
+  display: block;
+  height: 5px;
+  width: 20px;
+  border-bottom: 3px solid var(--dark-grey);
+  transition: transform 300ms ease-in-out;
+}
+
+.displayed {
+  .first {
+    transform: rotate(45deg) translate(4px, 1px);
+    
+  }
+
+  .second {
+    transform: rotate(-45deg) translate(1px);
+  }
+
+  .third {
+    transform: translateY(100px);
+  }
+}
